@@ -1,0 +1,9 @@
+class Solution(object):
+    def smallerNumbersThanCurrent(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+       
+	temp=sorted(nums)
+	return [temp.index(x) for x in nums]
