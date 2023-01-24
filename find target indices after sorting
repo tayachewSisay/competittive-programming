@@ -1,0 +1,11 @@
+class Solution(object):
+    def targetIndices(self, nums, target):
+        
+        lt_count = eq_count = 0
+        for i in nums:
+            if i < target:
+                lt_count += 1
+            elif i == target:
+                eq_count += 1
+            
+        return list(range(lt_count, lt_count+eq_count))
