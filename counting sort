@@ -1,0 +1,27 @@
+def countingSort(arr):
+    # Write your code here
+    count1={}
+
+    for i in range(0,100):
+        count1[i]=0
+    for j in (arr):
+        if j  in count1.keys():
+            #count1[i]=0
+        #else:
+            count1[j]+=1
+        
+    return count1.values()
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = countingSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
