@@ -1,0 +1,12 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        lookup = {"(":")","{":"}","[": "]"}
+
+        for p in s:
+            if p in lookup:
+                stack.append(p)
+            elif not stack or lookup[stack.pop()] != p:
+                return False
+        
+        return len(stack) == 0
