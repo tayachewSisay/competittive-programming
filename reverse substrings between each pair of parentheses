@@ -1,0 +1,18 @@
+class Solution:
+    def reverseParentheses(self, s: str) -> str:
+        
+        st = []
+        curr = ""
+        for letter in s:
+            
+            if letter == '(':
+                st.append(curr)
+                curr = ""
+            elif letter == ')':                                               
+                curr_rev = list(reversed(curr))
+                curr = st.pop() + ''.join(curr_rev)
+            else:
+                curr += letter
+                
+        
+        return curr
